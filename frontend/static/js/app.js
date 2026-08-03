@@ -1,4 +1,6 @@
+// Espera o carregamento completo do DOM para inicializar os comportamentos da interface.
 document.addEventListener('DOMContentLoaded', () => {
+  // Seleciona os elementos principais da página usados nas interações do usuário.
   const searchInput = document.querySelector('input[name="q"]');
   const sidebar = document.getElementById('sidebar');
   const sidebarToggle = document.getElementById('sidebarToggle');
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.className = 'sidebar-overlay';
   document.body.appendChild(overlay);
 
-  // Apply and persist the selected theme (light or dark).
+  // Aplica e salva o tema claro ou escuro escolhido pelo usuário.
   const applyTheme = (theme) => {
     document.body.classList.toggle('theme-dark', theme === 'dark');
     document.body.classList.toggle('theme-light', theme === 'light');
@@ -25,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'light';
   applyTheme(savedTheme);
 
+  // Elementos usados para renderizar produtos, paginação e navegação.
   const productList = document.getElementById('product-list');
   const paginationNav = document.getElementById('pagination');
 
-  // Build a URL query string from an object of filter parameters.
+  // Constrói a query string de filtros para manter navegação e busca sincronizadas.
   const buildQueryString = (params) => {
     const query = new URLSearchParams();
     Object.entries(params).forEach(([key, value]) => {
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return query.toString();
   };
 
-  // Render product cards returned from the backend API.
+  // Renderiza os cartões de produtos recebidos da API.
   const renderProducts = (products) => {
     if (!productList) return;
 
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .join('');
   };
 
-  // Render pagination controls under the product list.
+  // Renderiza os controles de paginação abaixo da lista de produtos.
   const renderPagination = (pagination, queryParams) => {
     if (!paginationNav) return;
     const { pages, page } = pagination;
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     paginationNav.style.display = '';
   };
 
-  // Read current filter values from the page URL.
+  // Lê os filtros atuais presentes na URL para manter o estado da página.
   const getCurrentFilters = () => {
     const urlParams = new URLSearchParams(window.location.search);
     return {
@@ -113,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   };
 
-  // Load a specific results page with the current filters and update the UI.
+  // Carrega uma página específica de resultados usando os filtros atuais.
   const loadPage = async (page) => {
     const filters = getCurrentFilters();
     const queryString = buildQueryString({ ...filters, page });
@@ -161,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Fecha o menu lateral e remove a sobreposição visual usada em telas menores.
   const closeSidebar = () => {
     sidebar.classList.remove('is-open');
     overlay.classList.remove('is-visible');
@@ -183,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Converte links de ação em botões para padronizar a interação visual da interface.
   const convertActionLinksToButtons = () => {
     const selectors = [
       'a.btn',
@@ -213,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Auto-dismiss flash messages placed in the flash container faster
+  // Fecha automaticamente as mensagens de alerta após alguns segundos.
   const flashAlerts = document.querySelectorAll('#flash-container .alert, .flash-card .alert');
   flashAlerts.forEach((alert) => {
     const card = alert.closest('.flash-card');

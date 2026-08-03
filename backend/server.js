@@ -4,21 +4,25 @@ const session = require('express-session');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 
-// Create Express app and paths used by the server.
+// Cria a aplicação principal do servidor Express.
 const app = express();
+// Define a porta em que o servidor vai rodar, usando a variável de ambiente ou a porta 5000 por padrão.
 const PORT = process.env.PORT || 5000;
+// Define os caminhos para a pasta frontend, arquivos estáticos e templates.
 const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
 const STATIC_DIR = path.join(FRONTEND_DIR, 'static');
 const TEMPLATES_DIR = path.join(FRONTEND_DIR, 'templates');
+// Caminho do arquivo JSON que contém os produtos mockados.
 const PRODUCTS_FILE = path.join(__dirname, '..', 'mock_data', 'products.json');
 
-// Parse URL-encoded form payloads and JSON bodies.
+// Habilita o tratamento de formulários enviados via URL encoded e JSON.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve CSS/JS assets and product images from the frontend folder.
+// Serve os arquivos estáticos do frontend e as imagens dos produtos.
 app.use('/static', express.static(STATIC_DIR));
 app.use('/image', express.static(path.join(STATIC_DIR, 'js', 'image')));
 
+// Configura a sessão do usuário para páginas futuras que precisem de autenticação.
 app.use(
   session({
     secret: process.env.SESSION_SECRET || 'marketcompare-node-secret',
@@ -27,14 +31,14 @@ app.use(
   })
 );
 
-// Configure Nunjucks to render templates from the frontend/templates folder.
+// Configura o mecanismo de templates Nunjucks para renderizar as páginas HTML do frontend.
 const env = nunjucks.configure(TEMPLATES_DIR, {
   autoescape: true,
   express: app,
   watch: false,
 });
 
-// Add a reusable template filter for numeric formatting in Nunjucks.
+// Adiciona um filtro reutilizável para formatar valores numéricos nas páginas HTML.
 env.addFilter('format', (value, arg) => {
   let numberValue = value;
   let formatString = arg;
@@ -52,6 +56,7 @@ env.addFilter('format', (value, arg) => {
   return String(value);
 });
 
+// Define os atalhos de rotas usados pelos templates para gerar links corretamente.
 const endpoints = {
   'main.index': (args = {}) => {
     const queryParts = [];
@@ -77,6 +82,7 @@ const endpoints = {
   static: ({ filename } = {}) => `/static/${filename}`,
 };
 
+// Normaliza os argumentos recebidos para evitar erros quando a função url_for for chamada sem parâmetros.
 function normalizeArgs(args) {
   if (args && typeof args === 'object' && !Array.isArray(args)) {
     return args;
@@ -84,6 +90,7 @@ function normalizeArgs(args) {
   return {};
 }
 
+// Gera URLs com base nas rotas definidas acima.
 function url_for(endpoint, args = {}) {
   const route = endpoints[endpoint];
   const normalizedArgs = normalizeArgs(args);
@@ -93,6 +100,7 @@ function url_for(endpoint, args = {}) {
   return '/';
 }
 
+// Mantém uma função compatível com mensagens flash, mesmo sem uso atual no projeto.
 function getFlashMessages(options = {}) {
   if (typeof options === 'object' && options !== null) {
     if (options.with_categories || options.withCategories) {
@@ -102,6 +110,7 @@ function getFlashMessages(options = {}) {
   return [];
 }
 
+// Monta um contexto simples do request para ser repassado aos templates.
 function buildRequestContext(req) {
   return {
     args: {
@@ -114,8 +123,8 @@ function buildRequestContext(req) {
   };
 }
 
-// Read product data from the JSON dataset on every request.
-// This is a simple mock data source and can later be replaced by a real database.
+// Lê os dados de produtos do arquivo JSON a cada requisição.
+// Atualmente é uma fonte mockada, mas pode ser substituída por um banco de dados no futuro.
 function loadProducts() {
   try {
     const raw = fs.readFileSync(PRODUCTS_FILE, 'utf-8');
@@ -127,12 +136,12 @@ function loadProducts() {
   }
 }
 
-// Normalize text for case-insensitive matching in search and filter logic.
+// Normaliza texto para comparação case-insensitive nas buscas e filtros.
 function normalizeText(value) {
   return String(value || '').trim().toLowerCase();
 }
 
-// Search, filter, sort and compute the cheapest price for each product.
+// Busca, filtra, ordena os produtos e calcula o menor preço de cada item.
 function getSearchResults(query, category, market, sort) {
   const products = loadProducts();
   const normalizedQuery = normalizeText(query);
@@ -181,6 +190,7 @@ function getSearchResults(query, category, market, sort) {
   return mapped;
 }
 
+// Extrai as categorias disponíveis a partir da base de produtos.
 function getCategories() {
   const products = loadProducts();
   const categories = new Set();
@@ -188,6 +198,7 @@ function getCategories() {
   return Array.from(categories).sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
 }
 
+// Extrai os mercados disponíveis a partir dos preços cadastrados.
 function getMarkets() {
   const products = loadProducts();
   const markets = new Set();
@@ -197,7 +208,7 @@ function getMarkets() {
   return Array.from(markets).sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
 }
 
-// Render a Nunjucks template with common application context.
+// Renderiza um template Nunjucks com o contexto comum da aplicação.
 function renderTemplate(res, template, req, context = {}) {
   res.render(template, {
     url_for,
@@ -208,6 +219,7 @@ function renderTemplate(res, template, req, context = {}) {
   });
 }
 
+// Organiza os dados do produto para serem usados na página de comparação.
 function buildProductCard(product) {
   return {
     ...product,
@@ -222,7 +234,7 @@ function buildProductCard(product) {
   };
 }
 
-// Main page route: renders product listing with search, filters, and pagination.
+// Rota principal: exibe a listagem de produtos com busca, filtros e paginação.
 app.get('/', (req, res) => {
   const query = req.query.q || '';
   const category = req.query.category || '';
@@ -262,7 +274,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// API endpoint for frontend AJAX pagination and search.
+// Endpoint da API usado pelo frontend para carregar produtos sem recarregar a página.
 app.get('/api/produtos', (req, res) => {
   const query = req.query.q || '';
   const category = req.query.category || '';
@@ -297,6 +309,7 @@ app.get('/api/produtos', (req, res) => {
   });
 });
 
+// Rota de comparação: mostra os preços de um produto em diferentes mercados.
 app.get('/comparar/:product_id', (req, res) => {
   const productId = Number(req.params.product_id);
   const product = loadProducts().find((item) => item.id === productId);
@@ -321,17 +334,18 @@ app.get('/comparar/:product_id', (req, res) => {
   }
 
   const cheapestPrice = prices[0];
-  const mostExpensivePrice = prices[prices.length - 1];
-  const savings = Number((mostExpensivePrice.price - cheapestPrice.price).toFixed(2));
+  const topThreePrices = prices.slice(0, 3);
+  const savings = Number((prices[prices.length - 1].price - cheapestPrice.price).toFixed(2));
 
   renderTemplate(res, 'compare.html', req, {
     product: buildProductCard(product),
-    prices,
+    prices: topThreePrices,
     savings,
     cheapestPrice,
   });
 });
 
+// Rotas básicas de navegação e ações do aplicativo.
 app.get('/adicionar-produto', (req, res) => {
   renderTemplate(res, 'add_product.html', req);
 });
@@ -398,6 +412,7 @@ app.post('/recuperar-senha', (req, res) => {
   res.redirect('/login');
 });
 
+// Middleware para rotas não encontradas.
 app.use((req, res) => {
   res.status(404).send('Página não encontrada');
 });
