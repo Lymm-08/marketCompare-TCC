@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Achocolatado",
+      "brand": "Nescau",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/achocolatado nescau.jpg",
+      "prices": [
+        {"market": "Assaí", "address": "Av. Paulista, 1000", "city": "São Paulo", "price": 8.49},
+        {"market": "Carrefour", "address": "Rua das Flores, 450", "city": "São Paulo", "price": 9.99}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Arroz",
+      "brand": "Camil",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/arroz camil.jpg",
+      "prices": [
+        {"market": "Atacadão", "address": "Rua do Comércio, 300", "city": "Campinas", "price": 15.25},
+        {"market": "Extra", "address": "Av. Brasil, 200", "city": "Ribeirão Preto", "price": 16.79}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Água",
+      "brand": "Crystal",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/agua.jpg",
+      "prices": [
+        {"market": "Carrefour", "address": "Rua das Flores, 450", "city": "São Paulo", "price": 2.99},
+        {"market": "Sonda", "address": "Rua da Praia, 80", "city": "São Paulo", "price": 2.79}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Detergente",
+      "brand": "Limpol",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/detergente limpou.jpg",
+      "prices": [
+        {"market": "Dia", "address": "Av. Nova, 520", "city": "Campinas", "price": 4.89},
+        {"market": "Extra", "address": "Av. Brasil, 200", "city": "Ribeirão Preto", "price": 5.25}
+      ]
+    }
+  ]
+}

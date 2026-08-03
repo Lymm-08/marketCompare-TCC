@@ -12,29 +12,17 @@ See how the website works below:
 
 ## Tech Stack
 
-- Python 3.10+
-- Flask
-- Flask-SQLAlchemy
-- Flask-Login
-- MySQL
+- Node.js
+- Express
+- Nunjucks
 - Bootstrap
 
 ## Project Structure
 
 ```text
-app.py
 backend/
-  app/
-    __init__.py
-    config.py
-    models.py
-    routes.py
-    routes/
-    seed_data.py
-    templates/
-database/
-  marketcompare_mysql.sql
-  mysql_setup.py
+  package.json
+  server.js
 frontend/
   static/
     css/
@@ -49,67 +37,24 @@ frontend/
     edit_cadastro.html
     favorites.html
     index.html
-instance/
+mock_data/
+  products.json
 media/
-tests/
-  test_auth.py
-requirements.txt
-.env
 ```
 
 ## How to run locally
 
-### 1) Create a virtual environment
+### 1) Install dependencies
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
+cd backend
+npm install
 ```
 
-### 2) Install dependencies
+### 2) Start the server
 
 ```bash
-pip install -r requirements.txt
-```
-
-### 3) Configure the environment
-
-Create a .env file in the project root and define the DATABASE_URL variable.
-
-Set the MySQL connection URL as follows:
-
-```env
-DATABASE_URL=mysql+pymysql://username:password@localhost:3306/marketcompare
-```
-
-## How to create the database in MySQL
-
-1. Open MySQL Workbench, phpMyAdmin, or the MySQL terminal.
-2. Create the database:
-
-```sql
-CREATE DATABASE marketcompare CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-
-3. Run the project's SQL script:
-
-```bash
-mysql -u root -p < database/marketcompare_mysql.sql
-```
-
-You can also open [database/marketcompare_mysql.sql](database/marketcompare_mysql.sql) in your MySQL client and execute its contents.
-
-## Database configuration
-
-The application reads the connection URL from the DATABASE_URL variable defined in the project environment file.
-
-- Main configuration file: [backend/app/config.py](backend/app/config.py)
-- Environment file: [.env](.env)
-
-## Run the application
-
-```bash
-python app.py
+npm start
 ```
 
 Open the following address in your browser:

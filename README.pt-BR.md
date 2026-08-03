@@ -2,7 +2,7 @@
 
 🌎 Idioma: Português | 🇺🇸 [English](README.md)
 
-MarketCompare é uma aplicação web para comparar preços de produtos e gerenciar itens favoritos. O projeto utiliza um backend em Flask com uma interface simples para demonstrar o fluxo principal de cadastro, comparação e favoritos.
+MarketCompare é uma aplicação web para comparar preços de produtos e gerenciar itens favoritos. O projeto utiliza um backend em Node.js com Express e uma interface em HTML, CSS e JavaScript puro.
 
 ## Demo Video
 
@@ -12,29 +12,17 @@ Veja o funcionamento do site abaixo:
 
 ## Stack
 
-- Python 3.10+
-- Flask
-- Flask-SQLAlchemy
-- Flask-Login
-- MySQL
+- Node.js
+- Express
+- Nunjucks
 - Bootstrap
 
 ## Estrutura do projeto
 
 ```text
-app.py
 backend/
-  app/
-    __init__.py
-    config.py
-    models.py
-    routes.py
-    routes/
-    seed_data.py
-    templates/
-database/
-  marketcompare_mysql.sql
-  mysql_setup.py
+  package.json
+  server.js
 frontend/
   static/
     css/
@@ -49,37 +37,24 @@ frontend/
     edit_cadastro.html
     favorites.html
     index.html
-instance/
+mock_data/
+  products.json
 media/
-tests/
-  test_auth.py
-requirements.txt
-.env
 ```
 
 ## Como rodar localmente
 
-### 1) Criar ambiente virtual
+### 1) Instale as dependências
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
+cd backend
+npm install
 ```
 
-### 2) Instalar dependências
+### 2) Inicie o servidor
 
 ```bash
-pip install -r requirements.txt
-```
-
-### 3) Configurar o ambiente
-
-Crie um arquivo .env na raiz do projeto e defina a variável DATABASE_URL.
-
-Defina a URL de conexão do MySQL da seguinte forma:
-
-```env
-DATABASE_URL=mysql+pymysql://usuario:senha@localhost:3306/marketcompare
+npm start
 ```
 
 ## Como criar o banco no MySQL
@@ -99,17 +74,11 @@ mysql -u root -p < database/marketcompare_mysql.sql
 
 Também é possível abrir [database/marketcompare_mysql.sql](database/marketcompare_mysql.sql) no seu cliente MySQL e executar o conteúdo.
 
-## Configuração do banco
-
-A aplicação lê a URL de conexão a partir da variável DATABASE_URL definida no arquivo de ambiente do projeto.
-
-- Arquivo principal de configuração: [backend/app/config.py](backend/app/config.py)
-- Arquivo de ambiente: [.env](.env)
-
 ## Executar a aplicação
 
 ```bash
-python app.py
+cd backend
+npm start
 ```
 
 Acesse o seguinte endereço no navegador:
