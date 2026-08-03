@@ -19,3 +19,4 @@ marketcompare.db
 *.db
 database/*.sql
 RUN_LOCALLY.md
+PROJECT_DOCUMENTATION.md

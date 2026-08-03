@@ -40,6 +40,9 @@ frontend/
 mock_data/
   products.json
 media/
+
+Documentation:
+  PROJECT_DOCUMENTATION.md
 ```
 
 ## How to run locally

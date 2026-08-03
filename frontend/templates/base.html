@@ -60,14 +60,7 @@
 
     <!-- Flash messages: fixed card at bottom-center -->
     <div id="flash-container" class="flash-container" aria-live="polite" aria-atomic="true">
-      {% set messages = get_flashed_messages(true) %}
-      {% if messages %}
-        <div class="flash-card card shadow-sm p-3">
-          {% for category, message in messages %}
-            <div class="alert alert-{{ category }} mb-2">{{ message }}</div>
-          {% endfor %}
-        </div>
-      {% endif %}
+      <!-- Flash messages are not currently supported in this Node/Express version -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

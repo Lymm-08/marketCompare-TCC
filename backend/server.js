@@ -4,6 +4,7 @@ const session = require('express-session');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 
+// Create Express app and paths used by the server.
 const app = express();
 const PORT = process.env.PORT || 5000;
 const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
@@ -11,8 +12,10 @@ const STATIC_DIR = path.join(FRONTEND_DIR, 'static');
 const TEMPLATES_DIR = path.join(FRONTEND_DIR, 'templates');
 const PRODUCTS_FILE = path.join(__dirname, '..', 'mock_data', 'products.json');
 
+// Parse URL-encoded form payloads and JSON bodies.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve CSS/JS assets and product images from the frontend folder.
 app.use('/static', express.static(STATIC_DIR));
 app.use('/image', express.static(path.join(STATIC_DIR, 'js', 'image')));
 
@@ -24,17 +27,28 @@ app.use(
   })
 );
 
+// Configure Nunjucks to render templates from the frontend/templates folder.
 const env = nunjucks.configure(TEMPLATES_DIR, {
   autoescape: true,
   express: app,
   watch: false,
 });
 
+// Add a reusable template filter for numeric formatting in Nunjucks.
 env.addFilter('format', (value, arg) => {
-  if (typeof arg === 'string' && arg.startsWith('%.') && arg.endsWith('f')) {
-    const decimals = Number(arg.slice(2, -1));
-    return Number(value).toFixed(Number.isFinite(decimals) ? decimals : 2);
+  let numberValue = value;
+  let formatString = arg;
+
+  if (typeof value === 'string' && typeof arg === 'number') {
+    formatString = value;
+    numberValue = arg;
   }
+
+  if (typeof formatString === 'string' && formatString.startsWith('%.') && formatString.endsWith('f')) {
+    const decimals = Number(formatString.slice(2, -1));
+    return Number(numberValue).toFixed(Number.isFinite(decimals) ? decimals : 2);
+  }
+
   return String(value);
 });
 
@@ -100,6 +114,8 @@ function buildRequestContext(req) {
   };
 }
 
+// Read product data from the JSON dataset on every request.
+// This is a simple mock data source and can later be replaced by a real database.
 function loadProducts() {
   try {
     const raw = fs.readFileSync(PRODUCTS_FILE, 'utf-8');
@@ -111,10 +127,12 @@ function loadProducts() {
   }
 }
 
+// Normalize text for case-insensitive matching in search and filter logic.
 function normalizeText(value) {
   return String(value || '').trim().toLowerCase();
 }
 
+// Search, filter, sort and compute the cheapest price for each product.
 function getSearchResults(query, category, market, sort) {
   const products = loadProducts();
   const normalizedQuery = normalizeText(query);
@@ -146,9 +164,11 @@ function getSearchResults(query, category, market, sort) {
       (min, price) => (price.price < min ? price.price : min),
       Number.POSITIVE_INFINITY
     );
+
     return {
       ...product,
-      cheapest_price: Number.isFinite(cheapestPrice) ? Number(cheapestPrice.toFixed(2)) : null,
+      // Keep the cheapest product price as a numeric value for sorting and formatting.
+      cheapest_price: Number.isFinite(cheapestPrice) ? Number(cheapestPrice.toFixed(2)) : 0,
     };
   });
 
@@ -177,6 +197,7 @@ function getMarkets() {
   return Array.from(markets).sort((a, b) => a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }));
 }
 
+// Render a Nunjucks template with common application context.
 function renderTemplate(res, template, req, context = {}) {
   res.render(template, {
     url_for,
@@ -201,6 +222,7 @@ function buildProductCard(product) {
   };
 }
 
+// Main page route: renders product listing with search, filters, and pagination.
 app.get('/', (req, res) => {
   const query = req.query.q || '';
   const category = req.query.category || '';
@@ -240,10 +262,22 @@ app.get('/', (req, res) => {
   });
 });
 
+// API endpoint for frontend AJAX pagination and search.
 app.get('/api/produtos', (req, res) => {
   const query = req.query.q || '';
-  const products = getSearchResults(query, '', '', 'menor-preco');
-  const payload = products.slice(0, 10).map((product) => ({
+  const category = req.query.category || '';
+  const market = req.query.market || '';
+  const sort = req.query.sort || 'menor-preco';
+  const page = Number(req.query.page || 1);
+  const perPage = Number(req.query.per_page || 10);
+
+  const products = getSearchResults(query, category, market, sort);
+  const total = products.length;
+  const pages = Math.max(1, Math.ceil(total / perPage));
+  const currentPage = Math.min(Math.max(page, 1), pages);
+  const paginated = products.slice((currentPage - 1) * perPage, currentPage * perPage);
+
+  const payload = paginated.map((product) => ({
     id: product.id,
     name: product.name,
     brand: product.brand,
@@ -251,7 +285,16 @@ app.get('/api/produtos', (req, res) => {
     image_url: product.image_url,
     cheapest_price: product.cheapest_price,
   }));
-  res.json(payload);
+
+  res.json({
+    products: payload,
+    pagination: {
+      total,
+      page: currentPage,
+      pages,
+      per_page: perPage,
+    },
+  });
 });
 
 app.get('/comparar/:product_id', (req, res) => {
@@ -271,19 +314,21 @@ app.get('/comparar/:product_id', (req, res) => {
       },
       price: price.price,
     }))
-    .sort((a, b) => a.price - b.price)
-    .slice(0, 3);
+    .sort((a, b) => a.price - b.price);
 
   if (!prices.length) {
     return res.redirect('/');
   }
 
-  const savings = Number((prices[prices.length - 1].price - prices[0].price).toFixed(2));
+  const cheapestPrice = prices[0];
+  const mostExpensivePrice = prices[prices.length - 1];
+  const savings = Number((mostExpensivePrice.price - cheapestPrice.price).toFixed(2));
 
   renderTemplate(res, 'compare.html', req, {
     product: buildProductCard(product),
     prices,
     savings,
+    cheapestPrice,
   });
 });
 

@@ -44,16 +44,16 @@
       </div>
     </form>
 
-    <div class="row g-4">
+    <div id="product-list" class="row g-4">
       {% for item in products %}
-      <div class="col-md-6 col-xl-4">
+      <div class="col-md-6 col-xl-4 product-card">
         <div class="card h-100 shadow-sm">
           <img src="{{ item.product.image_url or 'https://via.placeholder.com/300x180' }}" class="card-img-top" alt="{{ item.product.name }}" />
           <div class="card-body">
             <span class="badge text-bg-light mb-2">{{ item.product.category }}</span>
             <h5 class="card-title">{{ item.product.name }}</h5>
             <p class="card-text text-muted">{{ item.product.brand }}</p>
-            <p class="fw-bold text-success">Menor preço: R$ {{ '%.2f'|format(item.cheapest_price or 0) }}</p>
+            <p class="fw-bold text-success">Menor preço: R$ {{ item.cheapest_price | format('%.2f') }}</p>
             <a href="{{ url_for('main.compare', product_id=item.product.id) }}" class="btn btn-primary">Comparar preços</a>
           </div>
         </div>
@@ -66,7 +66,7 @@
     </div>
 
     {% if pagination.pages > 1 %}
-    <nav class="mt-4">
+    <nav id="pagination" class="mt-4" data-current-page="{{ pagination.page }}" data-total-pages="{{ pagination.pages }}">
       <ul class="pagination justify-content-center">
         {% for page_num in pagination.iter_pages() %}
           {% if page_num %}

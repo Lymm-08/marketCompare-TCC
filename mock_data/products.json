@@ -7,41 +7,2967 @@
       "category": "Bebidas",
       "image_url": "/static/js/image/achocolatado nescau.jpg",
       "prices": [
-        {"market": "Assaí", "address": "Av. Paulista, 1000", "city": "São Paulo", "price": 8.49},
-        {"market": "Carrefour", "address": "Rua das Flores, 450", "city": "São Paulo", "price": 9.99}
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 14.29
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 15.74
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 17.19
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 18.64
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 20.09
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 21.54
+        }
       ]
     },
     {
       "id": 2,
-      "name": "Arroz",
-      "brand": "Camil",
-      "category": "Alimentos",
-      "image_url": "/static/js/image/arroz camil.jpg",
+      "name": "Achocolatado",
+      "brand": "Toddy",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/achocolatado toddy.jpg",
       "prices": [
-        {"market": "Atacadão", "address": "Rua do Comércio, 300", "city": "Campinas", "price": 15.25},
-        {"market": "Extra", "address": "Av. Brasil, 200", "city": "Ribeirão Preto", "price": 16.79}
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 15.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 18.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.99
+        }
       ]
     },
     {
       "id": 3,
+      "name": "Achocolatado",
+      "brand": "3 Corações",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/achocolatado tres corações.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.54
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.99
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.44
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.89
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.34
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.79
+        }
+      ]
+    },
+    {
+      "id": 4,
       "name": "Água",
       "brand": "Crystal",
       "category": "Bebidas",
       "image_url": "/static/js/image/agua.jpg",
       "prices": [
-        {"market": "Carrefour", "address": "Rua das Flores, 450", "city": "São Paulo", "price": 2.99},
-        {"market": "Sonda", "address": "Rua da Praia, 80", "city": "São Paulo", "price": 2.79}
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 14.84
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 16.29
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 17.74
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 19.19
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 20.64
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 22.09
+        }
       ]
     },
     {
-      "id": 4,
+      "id": 5,
+      "name": "Arroz",
+      "brand": "Camil",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/arroz camil.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Arroz",
+      "brand": "Prato Fino",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/arroz prato fino.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.54
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.99
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.44
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.89
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.34
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.79
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Arroz",
+      "brand": "Tio João",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/arroz tio joao.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.39
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.84
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.29
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.74
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.19
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.64
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Azeite",
+      "brand": "Andorinha",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/azeite andorinha.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 8.99
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.44
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 11.89
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.34
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 14.79
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.24
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Azeite",
+      "brand": "Gallo",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/azeite galo.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Azeite",
+      "brand": "Sol da Toscana",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/azeite sol da toscana.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Biscoito",
+      "brand": "Nestlé",
+      "category": "Snacks",
+      "image_url": "/static/js/image/biscoito da nestle.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.04
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Biscoito",
+      "brand": "Piraquê",
+      "category": "Snacks",
+      "image_url": "/static/js/image/biscoito piraquê.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.59
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Biscoito",
+      "brand": "Trakinas",
+      "category": "Snacks",
+      "image_url": "/static/js/image/biscoito trakinas.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.89
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.34
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.79
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.24
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.69
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.14
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Bolacha",
+      "brand": "Club Social",
+      "category": "Snacks",
+      "image_url": "/static/js/image/bolacha club social.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 7.59
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 9.04
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 10.49
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 11.94
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 13.39
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 14.84
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Bolacha",
+      "brand": "Oreo",
+      "category": "Snacks",
+      "image_url": "/static/js/image/bolacha oreo.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 8.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 11.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 14.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 15.94
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Bolacha",
+      "brand": "Passatempo",
+      "category": "Snacks",
+      "image_url": "/static/js/image/bolacha passatempo.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 7.04
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 8.49
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 9.94
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 11.39
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 12.84
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 14.29
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Café",
+      "brand": "Pilão",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/café pilão.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 15.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 18.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.99
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Café",
+      "brand": "3 Corações",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/café tres corações.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.54
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.99
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.44
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.89
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.34
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.79
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Café",
+      "brand": "Pelé",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/café pelé.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.19
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.64
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.09
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.54
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.99
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.44
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Condicionador",
+      "brand": "Dove",
+      "category": "Higiene",
+      "image_url": "/static/js/image/condicionador dove.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.94
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Condicionador",
+      "brand": "Elseve",
+      "category": "Higiene",
+      "image_url": "/static/js/image/condicionador elseve.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.04
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Condicionador",
+      "brand": "Pantene",
+      "category": "Higiene",
+      "image_url": "/static/js/image/condicionador pnatene.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.59
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Desinfetante",
+      "brand": "Pinho de Sol",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/desinfetante pinho de sol.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.64
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.09
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.54
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.99
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.44
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.89
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Desinfetante",
+      "brand": "Ypê",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/desinfetante ipê.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.64
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.09
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.54
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.99
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.44
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.89
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Desinfetante",
+      "brand": "Uau",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/desinfetante uau.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.64
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.09
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.54
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.99
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.44
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.89
+        }
+      ]
+    },
+    {
+      "id": 26,
       "name": "Detergente",
       "brand": "Limpol",
       "category": "Limpeza",
       "image_url": "/static/js/image/detergente limpou.jpg",
       "prices": [
-        {"market": "Dia", "address": "Av. Nova, 520", "city": "Campinas", "price": 4.89},
-        {"market": "Extra", "address": "Av. Brasil, 200", "city": "Ribeirão Preto", "price": 5.25}
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.29
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.74
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.19
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.64
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.09
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.54
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Detergente",
+      "brand": "Ypê",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/detergente ypê.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.64
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.09
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.54
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.99
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.44
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.89
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Detergente",
+      "brand": "Veja",
+      "category": "Limpeza",
+      "image_url": "/static/js/image/detergente veja.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.19
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.64
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.09
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.54
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.99
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.44
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Feijão",
+      "brand": "Camil",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/feijão camil.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Feijão",
+      "brand": "Kicaldo",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/feijão kicaldo.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.84
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.29
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.74
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.19
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.64
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.09
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Feijão",
+      "brand": "Patcha",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/feijão patcha.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.29
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.74
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.19
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.64
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.09
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 19.54
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Iogurte",
+      "brand": "Danone",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/iorgute danone.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.04
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Iogurte",
+      "brand": "Vigor",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/iorgute vigor.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.24
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.69
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.14
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.59
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.04
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.49
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Iorgute",
+      "brand": "Ninho",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/iorgute ninho.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.24
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.69
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.14
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.59
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.04
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.49
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Leite",
+      "brand": "Desnatado Italac",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite desnatado italac.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.59
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Leite",
+      "brand": "Desnatado Camponesa",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite desnatado camponesa.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 8.04
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 9.49
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 10.94
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 12.39
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 13.84
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 15.29
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Leite",
+      "brand": "Desnatado Piracanjuba",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite desnatado piracanjuba.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.14
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.59
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.04
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.49
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 14.94
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.39
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Leite",
+      "brand": "Integral Piracanjuba",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite integral piracanjuba.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 8.59
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.04
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 11.49
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 12.94
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 14.39
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 15.84
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Leite",
+      "brand": "Integral Batavo",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite integral batavo.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.04
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Leite",
+      "brand": "Integral",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/leite integral.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.89
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.34
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.79
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.24
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.69
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 19.14
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Macarrão",
+      "brand": "Adria",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/macarrão adria.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Macarrão",
+      "brand": "Amalia",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/macarrão amalia.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.29
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.74
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.19
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.64
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.09
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 19.54
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Macarrão",
+      "brand": "Parmalat",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/macarrão parmalat.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.39
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.84
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.29
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.74
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.19
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.64
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Manteiga",
+      "brand": "Liza",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/manteiga liza.png",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.94
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Manteiga",
+      "brand": "Catupiry",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/manteiga catupiry.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.89
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.34
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.79
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.24
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.69
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 19.14
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Manteiga",
+      "brand": "Mococa",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/manteiga mococa.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.04
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Pão",
+      "brand": "Balduco",
+      "category": "Padaria",
+      "image_url": "/static/js/image/pão balduco.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 9.84
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 11.29
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 12.74
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 14.19
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 15.64
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 17.09
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Pão",
+      "brand": "Viscontti",
+      "category": "Padaria",
+      "image_url": "/static/js/image/pão viscontti.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 5.99
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 7.44
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 8.89
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 10.34
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 11.79
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 13.24
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Papel Higiênico",
+      "brand": "Dama",
+      "category": "Higiene",
+      "image_url": "/static/js/image/papel higenico dama.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.94
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Papel Higiênico",
+      "brand": "Neve",
+      "category": "Higiene",
+      "image_url": "/static/js/image/papel higenico neve.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.94
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Papel Higiênico",
+      "brand": "Cotton",
+      "category": "Higiene",
+      "image_url": "/static/js/image/papel higenico cotton.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.04
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Queijo",
+      "brand": "Mussarela Aurora",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/queijo mussarela aurora.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.59
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Queijo",
+      "brand": "Mussarela Mandaká",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/queijo mussarela mandaká.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.89
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.34
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.79
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.24
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.69
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 19.14
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Queijo",
+      "brand": "Mussarela Sadia",
+      "category": "Laticínios",
+      "image_url": "/static/js/image/queijo mussarela sadia.webp",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.04
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Refrigerante",
+      "brand": "Coca-Cola",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/refrigerante coca cola.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 10.99
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.44
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 13.89
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.34
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.79
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.24
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Refrigerante",
+      "brand": "Fanta",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/refrigerante fanta.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 15.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 18.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.99
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Refrigerante",
+      "brand": "Guaraná",
+      "category": "Bebidas",
+      "image_url": "/static/js/image/refrigerante guarana.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 14.84
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 16.29
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 17.74
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 19.19
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 20.64
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 22.09
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Sabonete",
+      "brand": "Dove",
+      "category": "Higiene",
+      "image_url": "/static/js/image/sabonete dove.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.69
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.14
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.59
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.04
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.49
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.94
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Sabonete",
+      "brand": "Lux",
+      "category": "Higiene",
+      "image_url": "/static/js/image/sabonete lux.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.14
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 12.59
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.04
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 15.49
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 16.94
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.39
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Sabonete",
+      "brand": "Protex",
+      "category": "Higiene",
+      "image_url": "/static/js/image/sabonete protex.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.04
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Shampoo",
+      "brand": "Head & Shoulders",
+      "category": "Higiene",
+      "image_url": "/static/js/image/Shampoo Head & Shoulders.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.59
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Shampoo",
+      "brand": "Pantene",
+      "category": "Higiene",
+      "image_url": "/static/js/image/shampoo pantene.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 13.34
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.79
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 16.24
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.69
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 19.14
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.59
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Shampoo",
+      "brand": "Elseve",
+      "category": "Higiene",
+      "image_url": "/static/js/image/shampoo elseve.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 12.79
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 14.24
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 15.69
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 17.14
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 18.59
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 20.04
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Sopa",
+      "brand": "Knorr",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/sopa knorr.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Sopa",
+      "brand": "Maggi",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/sopa maggi.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 11.74
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 13.19
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 14.64
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 16.09
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 17.54
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 18.99
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Sopa",
+      "brand": "Campibell",
+      "category": "Alimentos",
+      "image_url": "/static/js/image/sopa campibell.jpg",
+      "prices": [
+        {
+          "market": "Assaí",
+          "address": "Av. Paulista, 1000",
+          "city": "São Paulo",
+          "price": 8.99
+        },
+        {
+          "market": "Atacadão",
+          "address": "Rua do Comércio, 300",
+          "city": "Campinas",
+          "price": 10.44
+        },
+        {
+          "market": "Carrefour",
+          "address": "Rua das Flores, 450",
+          "city": "São Paulo",
+          "price": 11.89
+        },
+        {
+          "market": "Extra",
+          "address": "Av. Brasil, 200",
+          "city": "Ribeirão Preto",
+          "price": 13.34
+        },
+        {
+          "market": "Sonda",
+          "address": "Rua da Praia, 80",
+          "city": "São Paulo",
+          "price": 14.79
+        },
+        {
+          "market": "Dia",
+          "address": "Av. Nova, 520",
+          "city": "Campinas",
+          "price": 16.24
+        }
       ]
     }
   ]

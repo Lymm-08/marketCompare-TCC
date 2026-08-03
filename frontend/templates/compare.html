@@ -10,12 +10,14 @@
         <div class="row g-3 mt-3">
           {% for price in prices %}
           <div class="col-md-4">
-            <div class="card border-success h-100">
+            <div class="card {% if price.price == cheapestPrice.price %}border-success{% else %}border-secondary{% endif %} h-100">
               <div class="card-body">
                 <h5 class="card-title">{{ price.market.name }}</h5>
                 <p class="card-text mb-1">{{ price.market.address }}</p>
                 <p class="card-text text-muted">{{ price.market.city }}</p>
-                <p class="fw-bold text-success">R$ {{ '%.2f'|format(price.price) }}</p>
+                <p class="fw-bold {% if price.price == cheapestPrice.price %}text-success{% else %}text-muted{% endif %}">
+                  {% if price.price == cheapestPrice.price %}Menor preço{% else %}Preço{% endif %}: R$ {{ price.price | format('%.2f') }}
+                </p>
                 {% if current_user.is_authenticated %}
                 <form method="post" action="{{ url_for('main.favoritar', product_id=product.id) }}">
                   <button class="btn btn-outline-warning" type="submit">⭐ Adicionar aos Favoritos</button>
@@ -28,7 +30,7 @@
           </div>
           {% endfor %}
         </div>
-        <div class="alert alert-success mt-4">Você economiza R$ {{ '%.2f'|format(savings) }} comprando no mercado mais barato.</div>
+        <div class="alert alert-success mt-4">Você economiza R$ {{ savings | format('%.2f') }} ao escolher o menor preço disponível.</div>
       </div>
     </div>
   </div>

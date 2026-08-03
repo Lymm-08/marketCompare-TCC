@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ cadastro.product.name }} - {{ cadastro.product.brand }}</h5>
         <p class="text-muted">{{ cadastro.market.name }} · {{ cadastro.market.city }}</p>
-        <p class="fw-bold text-success">R$ {{ '%.2f'|format(cadastro.price.price) }}</p>
+        <p class="fw-bold text-success">R$ {{ cadastro.price.price | format('%.2f') }}</p>
         <div class="d-flex gap-2">
           <a class="btn btn-outline-primary" href="{{ url_for('main.editar_cadastro', cadastro_id=cadastro.id) }}">Editar</a>
           <form method="post" action="{{ url_for('main.excluir_cadastro', cadastro_id=cadastro.id) }}">

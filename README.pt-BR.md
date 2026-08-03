@@ -40,6 +40,9 @@ frontend/
 mock_data/
   products.json
 media/
+
+Documentação:
+  PROJECT_DOCUMENTATION.md
 ```
 
 ## Como rodar localmente
@@ -56,23 +59,6 @@ npm install
 ```bash
 npm start
 ```
-
-## Como criar o banco no MySQL
-
-1. Abra o MySQL Workbench, phpMyAdmin ou o terminal do MySQL.
-2. Crie o banco:
-
-```sql
-CREATE DATABASE marketcompare CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-
-3. Execute o script SQL do projeto:
-
-```bash
-mysql -u root -p < database/marketcompare_mysql.sql
-```
-
-Também é possível abrir [database/marketcompare_mysql.sql](database/marketcompare_mysql.sql) no seu cliente MySQL e executar o conteúdo.
 
 ## Executar a aplicação
 
