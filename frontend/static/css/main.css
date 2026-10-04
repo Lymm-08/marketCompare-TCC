@@ -1,2 +1,5 @@
+/* Importa a base e as variáveis */
 @import url('./base.css');
+
+/* Importa os componentes estilizados */
 @import url('./components.css');

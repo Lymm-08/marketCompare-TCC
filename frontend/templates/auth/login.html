@@ -1,28 +1,94 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar - MarketCompare</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="auth-page">
 
-{% block content %}
-<div class="row justify-content-center">
-  <div class="col-lg-5">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h2 class="mb-4">Entrar</h2>
-        <form method="post">
-          <input type="hidden" name="next" value="{{ request.args.get('next', '') }}" />
-          <div class="mb-3">
-            <label class="form-label">E-mail</label>
-            <input class="form-control" type="email" name="email" required />
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="mb-4">Entrar</h2>
+          
+          <form id="login-form">
+            <input type="hidden" id="next-param" name="next" value="" />
+            
+            <div class="mb-3">
+              <label class="form-label" for="email">E-mail</label>
+              <input class="form-control" type="email" id="email" name="email" required />
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label" for="password">Senha</label>
+              <input class="form-control" type="password" id="password" name="password" required />
+            </div>
+            
+            <button class="btn btn-primary w-100" type="submit">Entrar</button>
+          </form>
+
+          <div class="mt-3 text-center">
+            <a href="/register">Criar conta</a> · <a href="/recuperar-senha">Esqueci minha senha</a>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Senha</label>
-            <input class="form-control" type="password" name="password" required />
-          </div>
-          <button class="btn btn-primary w-100" type="submit">Entrar</button>
-        </form>
-        <div class="mt-3 text-center">
-          <a href="{{ url_for('main.register') }}">Criar conta</a> · <a href="{{ url_for('main.recuperar_senha') }}">Esqueci minha senha</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-{% endblock %}
+
+<script src="/static/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('login-form');
+    const nextInput = document.getElementById('next-param');
+
+    // Captura o parâmetro 'next' da URL, se existir (ex: /login?next=/favoritos)
+    const urlParams = new URLSearchParams(window.location.search);
+    const nextUrl = urlParams.get('next') || '';
+    if (nextInput) {
+      nextInput.value = nextUrl;
+    }
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password, next: nextUrl })
+        });
+
+        if (response.ok) {
+          localStorage.setItem('marketcompare-authenticated', 'true');
+          const data = await response.json().catch(() => ({}));
+          // Redireciona para a página indicada pelo parâmetro 'next' ou para a página inicial
+          window.location.href = data.redirect || nextUrl || '/';
+        } else {
+          const errorData = await response.json().catch(() => ({}));
+          alert(errorData.message || 'E-mail ou senha incorretos.');
+        }
+      } catch (error) {
+        console.error('Erro ao efetuar login:', error);
+        alert('Erro ao conectar com o servidor.');
+      }
+    });
+  });
+</script>
+</body>
+</html>

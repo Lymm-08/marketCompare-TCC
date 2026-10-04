@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1790035130642,
+      "name": "QA User",
+      "email": "qa1465057062@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 1790035269351,
+      "name": "ema",
+      "email": "ema@gmail.com",
+      "password": "12345e"
+    },
+    {
+      "id": 1790035462144,
+      "name": "Login QA",
+      "email": "login1058507875@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 1790036117449,
+      "name": "Reset QA",
+      "email": "reset1568037777@example.com",
+      "password": "654321"
+    }
+  ]
+}

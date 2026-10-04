@@ -1,23 +1,87 @@
+/* ==========================================================================
+   ÍNDICE DO ARQUIVO BASE.CSS
+   1. Variáveis Globais & Temas (:root, body.theme-dark)
+   2. Reset & Estrutura Base (body, .app-shell, .content-area, main.container)
+   3. Topbar & Header (.topbar)
+   4. Navegação Lateral (.sidebar, .sidebar-nav, .theme-switch)
+   5. Formulários & Inputs (input, select, textarea, .form-control)
+   6. Componentes Básicos (cards, alerts, .flash-container, .floating-add-btn)
+   7. Responsividade (@media)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS GLOBAIS & TEMAS
+   -------------------------------------------------------------------------- */
 :root {
   --primary: #2563eb;
   --success: #16a34a;
-  --sidebar: #f8fbff;
+  --sidebar: #e8f2ff;
+  --search-bg: #e8f2ff;
   --sidebar-text: #102a43;
   --text: #102a43;
   --muted-text: #617d98;
   --bg: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
-  --surface: rgba(255,255,255,0.95);
-  --nav-bg: rgba(255,255,255,0.98);
-  --nav-hover: rgba(15,23,42,0.06);
-  --nav-border: rgba(15,23,42,0.08);
+  --surface: rgba(255, 255, 255, 0.95);
+  --nav-bg: rgba(255, 255, 255, 0.98);
+  --nav-hover: rgba(15, 23, 42, 0.06);
+  --nav-border: rgba(15, 23, 42, 0.08);
   --card-bg: #ffffff;
-  --card-border: rgba(15,23,42,0.08);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-divider: rgba(37, 99, 235, 0.18);
   --field-bg: #f8fbff;
-  --field-border: rgba(15,23,42,0.16);
-  --placeholder: rgba(16,42,67,0.5);
+  --field-border: rgba(15, 23, 42, 0.16);
+  --placeholder: rgba(16, 42, 67, 0.5);
   --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
 }
 
+body.theme-dark {
+  --sidebar: #050b18;
+  --search-bg: #111d33;
+  --sidebar-text: #e2e8f0;
+  --text: #f8fafc;
+  --muted-text: #94a3b8;
+  --bg: linear-gradient(135deg, #050b18 0%, #0f172a 100%);
+  --surface: #0c1323;
+  --nav-bg: rgba(15, 23, 42, 0.96);
+  --nav-hover: rgba(255, 255, 255, 0.08);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --card-bg: #0d111b;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --card-divider: rgba(148, 163, 184, 0.28);
+  --field-bg: rgba(255, 255, 255, 0.08);
+  --field-border: rgba(255, 255, 255, 0.18);
+  --placeholder: rgba(226, 232, 240, 0.75);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Overrides de Tema Escuro */
+body.theme-dark .text-muted {
+  color: var(--muted-text) !important;
+}
+
+body.theme-dark .sidebar-brand,
+body.theme-dark .sidebar-brand .brand-text,
+body.theme-dark .topbar-brand {
+  color: #ffffff;
+}
+
+body.theme-dark .sidebar-nav .nav-link {
+  color: var(--sidebar-text);
+}
+
+body.theme-dark .bg-white {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.theme-dark .shadow-sm {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & ESTRUTURA BASE
+   -------------------------------------------------------------------------- */
 body {
   margin: 0;
   background: var(--bg);
@@ -26,35 +90,70 @@ body {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-body.theme-dark {
-  --sidebar: #050b18;
-  --sidebar-text: #e2e8f0;
-  --text: #f8fafc;
-  --muted-text: #94a3b8;
-  --bg: linear-gradient(135deg, #050b18 0%, #0f172a 100%);
-  --surface: #0c1323;
-  --nav-bg: rgba(15,23,42,0.96);
-  --nav-hover: rgba(255,255,255,0.08);
-  --nav-border: rgba(255,255,255,0.12);
-  --card-bg: #0d111b;
-  --card-border: rgba(255,255,255,0.12);
-  --field-bg: rgba(255,255,255,0.08);
-  --field-border: rgba(255,255,255,0.18);
-  --placeholder: rgba(226,232,240,0.75);
-  --shadow: 0 10px 25px rgba(0,0,0,0.35);
-}
-
-body.theme-dark .text-muted {
-  color: var(--muted-text) !important;
-}
-
 .app-shell {
   display: flex;
   min-height: 100vh;
 }
 
+.content-area {
+  flex: 1;
+  min-width: 0;
+}
+
+main.container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2rem;
+}
+
+.card,
+.alert,
+.topbar,
+.sidebar,
+main.container {
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   3. TOPBAR & HEADER
+   -------------------------------------------------------------------------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--nav-border);
+  color: var(--text);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.topbar-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.sidebar-toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVEGAÇÃO LATERAL (SIDEBAR)
+   -------------------------------------------------------------------------- */
 .sidebar {
-  width: 280px;
+  width: min(210px, 76vw);
   max-width: 100vw;
   background: var(--sidebar);
   color: var(--sidebar-text);
@@ -66,13 +165,18 @@ body.theme-dark .text-muted {
   top: 0;
   left: -100%;
   height: 100vh;
-  border-right: 1px solid rgba(255,255,255,0.10);
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
   transition: left 0.2s ease;
   z-index: 20;
 }
 
 .sidebar.is-open {
   left: 0;
+}
+
+.app-shell.sidebar-open .content-area {
+  margin-left: min(210px, 76vw);
+  transition: margin-left 0.2s ease;
 }
 
 .sidebar-overlay {
@@ -86,8 +190,8 @@ body.theme-dark .text-muted {
 }
 
 .sidebar-overlay.is-visible {
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .sidebar-brand {
@@ -105,14 +209,6 @@ body.theme-dark .text-muted {
   color: var(--primary);
 }
 
-body.theme-dark .sidebar-brand {
-  color: #fff;
-}
-
-body.theme-dark .sidebar-brand .brand-text {
-  color: #fff;
-}
-
 .brand-badge {
   display: inline-flex;
   align-items: center;
@@ -120,7 +216,7 @@ body.theme-dark .sidebar-brand .brand-text {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.16);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .sidebar-nav {
@@ -141,10 +237,7 @@ body.theme-dark .sidebar-brand .brand-text {
   width: 100%;
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
-}
-
-body.theme-dark .sidebar-nav .nav-link {
-  color: var(--sidebar-text);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .sidebar-nav .nav-link:hover {
@@ -158,6 +251,7 @@ body.theme-dark .sidebar-nav .nav-link {
   padding-top: 1rem;
 }
 
+/* Alternador de Tema */
 .theme-switch {
   display: inline-flex;
   gap: 0.35rem;
@@ -165,6 +259,7 @@ body.theme-dark .sidebar-nav .nav-link {
   border: 1px solid var(--nav-border);
   border-radius: 999px;
   padding: 0.25rem;
+  width: 100%;
 }
 
 .theme-switch__option {
@@ -187,14 +282,14 @@ body.theme-dark .theme-switch__option.is-active {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.content-area {
-  flex: 1;
-  min-width: 0;
-}
-
+/* --------------------------------------------------------------------------
+   5. FORMULÁRIOS & INPUTS
+   -------------------------------------------------------------------------- */
 input,
 select,
-textarea {
+textarea,
+.form-control,
+.form-select {
   background: var(--field-bg);
   color: var(--text);
   border: 1px solid var(--field-border);
@@ -203,17 +298,22 @@ textarea {
 
 input::placeholder,
 select::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+.form-control::placeholder,
+.form-select::placeholder {
   color: var(--placeholder);
 }
 
-body.theme-dark input::placeholder,
-body.theme-dark textarea::placeholder,
-body.theme-dark .form-control::placeholder,
-body.theme-dark .form-select::placeholder {
-  color: rgba(226, 232, 240, 0.85);
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  background: var(--field-bg);
+  color: var(--text);
+  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.18);
+  border-color: #2563eb;
 }
 
+/* Inputs em Modo Escuro */
 body.theme-dark input,
 body.theme-dark .form-control,
 body.theme-dark textarea,
@@ -222,6 +322,13 @@ body.theme-dark .form-select {
   background-color: rgba(255, 255, 255, 0.08) !important;
   color: var(--text) !important;
   border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder,
+body.theme-dark .form-control::placeholder,
+body.theme-dark .form-select::placeholder {
+  color: rgba(226, 232, 240, 0.85);
 }
 
 body.theme-dark .form-select option,
@@ -237,51 +344,31 @@ body.theme-dark textarea:focus {
   color: var(--text) !important;
 }
 
-.form-control,
-.form-select {
-  background: var(--field-bg);
-  color: var(--text);
-  border: 1px solid var(--field-border);
-}
-
-.form-control:focus,
-.form-select:focus,
-textarea:focus {
-  background: var(--field-bg);
-  color: var(--text);
-  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.18);
-  border-color: #2563eb;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background: var(--surface);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--nav-border);
+/* --------------------------------------------------------------------------
+   6. COMPONENTES BÁSICOS & ALERTAS
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   color: var(--text);
 }
 
-.topbar-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.alert {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
 }
 
-.alert.fade-out {
+.alert.fade-out,
+.flash-card.fade-out {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease-out;
 }
 
-/* Flash container no rodapé central */
+/* Container de Mensagens Flash */
 .flash-container {
   position: static;
-  bottom: auto;
-  left: auto;
-  transform: none;
-  z-index: auto;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -289,14 +376,12 @@ textarea:focus {
   pointer-events: none;
   width: auto;
   max-width: 100%;
-  margin: 1rem auto;
 }
 
-/* Cartão da mensagem */
 .flash-card {
   pointer-events: auto;
-  background: #9ebdec;       
-  border: 1px solid #3265a4; 
+  background: #9ebdec;
+  border: 1px solid #3265a4;
   color: var(--text);
   border-radius: 0.75rem;
   width: auto;
@@ -308,8 +393,6 @@ textarea:focus {
   transition: opacity 0.3s ease-out;
 }
 
-
-/* Mensagem dentro do card */
 .flash-card .alert {
   margin: 0;
   background: transparent;
@@ -317,79 +400,7 @@ textarea:focus {
   padding: 0.2rem 0;
 }
 
-/* Efeito de fade-out */
-.alert.fade-out,
-.flash-card.fade-out {
-  opacity: 0;
-  transition: opacity 0.3s ease-out; /* tempo reduzido */
-}
-
-main.container {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 1.25rem;
-  padding: 2rem;
-}
-
-.topbar-brand {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-body.theme-dark .topbar-brand {
-  color: #fff;
-}
-
-.sidebar-nav .nav-link:hover {
-  background: var(--nav-hover);
-  color: var(--text);
-  transform: translateX(2px);
-}
-
-.card,
-.alert,
-.topbar,
-.sidebar,
-main.container {
-  color: var(--text);
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background: var(--surface);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--nav-border);
-  color: var(--text);
-}
-
-main.container {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 2rem;
-}
-
-body.theme-dark .bg-white {
-  background-color: var(--surface) !important;
-  color: var(--text) !important;
-  border-color: rgba(255,255,255,0.12);
-}
-
-body.theme-dark .shadow-sm {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35) !important;
-}
-
-.sidebar-toggle {
-  border: none;
-  background: transparent;
-  font-size: 1.3rem;
-  color: var(--text);
-}
-
+/* Botão Flutuante de Adicionar */
 .floating-add-btn {
   position: fixed;
   right: 1.2rem;
@@ -401,37 +412,29 @@ body.theme-dark .shadow-sm {
   align-items: center;
   justify-content: center;
   background: var(--success);
-  color: #fff;
+  color: #ffffff;
   font-size: 1.6rem;
   text-decoration: none;
   box-shadow: 0 14px 30px rgba(22, 163, 74, 0.25);
   z-index: 10;
-}
-
-.alert {
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  color: var(--text);
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  color: var(--text);
+  transition: transform 0.2s ease;
 }
 
 .floating-add-btn:hover {
-  color: #fff;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
+/* --------------------------------------------------------------------------
+   7. RESPONSIVIDADE
+   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .app-shell {
     flex-direction: column;
   }
 
   .sidebar {
-    width: min(280px, 82vw);
+    width: min(210px, 76vw);
     height: 100vh;
     position: fixed;
     left: -100%;
@@ -446,22 +449,131 @@ body.theme-dark .shadow-sm {
     left: 0;
   }
 
-  .sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 15;
-  }
-
-  .sidebar-overlay.is-visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
   .content-area {
     margin-left: 0;
   }
+
+  .app-shell.sidebar-open .content-area {
+    margin-left: min(210px, 76vw);
+  }
+}
+
+.product-card__market {
+  color: var(--muted-text);
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+}
+
+.product-card__title {
+  color: var(--text) !important;
+}
+
+.product-card__compare {
+  width: fit-content;
+  align-self: flex-start;
+  padding: 0.45rem 0.75rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+.product-card__compare:hover,
+.product-card__compare:focus {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+body.theme-dark.bg-light {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+body.theme-dark .offcanvas,
+body.theme-dark .offcanvas .nav-link,
+body.theme-dark .offcanvas .border-bottom,
+body.theme-dark .offcanvas .border-top {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--nav-border) !important;
+}
+
+body.theme-dark .offcanvas .text-dark,
+body.theme-dark .offcanvas .text-secondary,
+body.theme-dark .text-dark,
+body.theme-dark .text-secondary,
+body.theme-dark .text-body,
+body.theme-dark .form-label {
+  color: var(--text) !important;
+}
+
+body.theme-dark .bg-light,
+body.theme-dark .form-select.bg-light {
+  background-color: var(--field-bg) !important;
+  color: var(--text) !important;
+}
+
+.btn-group[role="group"] {
+  border: 1px solid var(--nav-border);
+  border-radius: 999px;
+  padding: 0.2rem;
+}
+
+.btn-group[role="group"] .btn {
+  border: 0;
+  border-radius: 999px !important;
+}
+
+.inner-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.inner-page-content {
+  min-height: calc(100vh - 4.5rem);
+  padding: 2rem;
+}
+
+.inner-page-content > .container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.inner-page .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+@media (max-width: 700px) {
+  .inner-page-content {
+    padding: 1rem;
+  }
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3rem;
+}
+
+.auth-page > .container {
+  width: 100%;
+}
+
+.product-card__body {
+  border-top: 1px solid var(--card-divider) !important;
+}
+
+.product-search {
+  background: var(--search-bg);
+  border: 1px solid var(--nav-border);
+  padding: 0.3rem;
+}
+
+.product-search .form-control {
+  background: transparent;
+  border: 0;
 }

@@ -1,41 +1,142 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparação de Preços</title>
+ <!-- Bootstrap CSS & Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
-{% block content %}
-<div class="row justify-content-center">
-  <div class="col-lg-8">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h2 class="card-title">{{ product.name }} - {{ product.brand }}</h2>
-        <p class="text-muted">{{ product.category }}</p>
-        <div class="alert alert-info mt-3">
-          Os 3 mercados com os menores preços deste produto.
-        </div>
-        <div class="row g-3 mt-3">
-          {% for price in prices %}
-          <div class="col-md-4">
-            <div class="card border-success h-100">
-              <div class="card-body">
-                <h5 class="card-title">{{ price.market.name }}</h5>
-                <p class="card-text mb-1">{{ price.market.address }}</p>
-                <p class="card-text text-muted">{{ price.market.city }}</p>
-                <p class="fw-bold text-success">
-                  Preço: R$ {{ price.price | format('%.2f') }}
-                </p>
-                {% if current_user.is_authenticated %}
-                <form method="post" action="{{ url_for('main.favoritar', product_id=product.id) }}">
-                  <button class="btn btn-outline-warning" type="submit">⭐ Adicionar aos Favoritos</button>
-                </form>
-                {% else %}
-                <a class="btn btn-outline-primary" href="{{ url_for('main.login') }}">Entrar para favoritar</a>
-                {% endif %}
-              </div>
-            </div>
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title" id="product-title">Carregando produto...</h2>
+          <p class="text-muted" id="product-category"></p>
+          
+          <div class="alert alert-info mt-3">
+            Os 3 mercados com os menores preços deste produto.
           </div>
-          {% endfor %}
+
+          <!-- Cards dos Mercados -->
+          <div class="row g-3 mt-3" id="prices-container"></div>
+
+          <!-- Alerta de Economia -->
+          <div class="alert alert-success mt-4 d-none" id="savings-alert">
+            Você economiza R$ <span id="savings-amount">0.00</span> ao escolher o mercado mais barato comparado aos demais.
+          </div>
         </div>
-        <div class="alert alert-success mt-4">Você economiza R$ {{ savings | format('%.2f') }} ao escolher o mercado mais barato comparado aos demais.</div>
       </div>
     </div>
   </div>
 </div>
-{% endblock %}
+
+<script src="/static/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Pega o ID do produto diretamente do caminho da URL (ex: /comparar/1)
+    const pathParts = window.location.pathname.split('/');
+    const productId = pathParts[pathParts.length - 1];
+
+    if (!productId) return;
+
+    try {
+      const response = await fetch(`/api/produtos/${productId}`);
+      if (!response.ok) throw new Error('Erro ao carregar produto');
+
+      const data = await response.json();
+      const product = data.product || data;
+      const prices = data.prices || product.prices || [];
+
+      // Preenche os dados do título e categoria
+      document.getElementById('product-title').textContent = `${product.name || product.nome || 'Produto'} - ${product.brand || product.marca || ''}`;
+      document.getElementById('product-category').textContent = product.category || product.categoria || 'Geral';
+
+      const pricesContainer = document.getElementById('prices-container');
+
+      if (prices.length === 0) {
+        pricesContainer.innerHTML = `
+          <div class="col-12">
+            <div class="alert alert-warning">Nenhum preço cadastrado para este produto.</div>
+          </div>
+        `;
+        return;
+      }
+
+      // Ordena por preço do menor para o maior
+      prices.sort((a, b) => Number(a.price || a.preco) - Number(b.price || b.preco));
+
+      // Renderiza até 3 ofertas
+      pricesContainer.innerHTML = prices.slice(0, 3).map((item) => {
+        const marketName = item.market?.name || item.market || item.mercado || 'Mercado';
+        const marketAddress = item.market?.address || item.address || item.endereco || '';
+        const marketCity = item.market?.city || item.city || item.cidade || '';
+        const priceVal = Number(item.price || item.preco || 0).toFixed(2);
+
+        return `
+          <div class="col-md-4">
+            <div class="card border-success h-100">
+              <div class="card-body">
+                <h5 class="card-title">${marketName}</h5>
+                <p class="card-text mb-1">${marketAddress}</p>
+                <p class="card-text text-muted">${marketCity}</p>
+                <p class="fw-bold text-success">
+                  Preço: R$ ${priceVal}
+                </p>
+                <button class="btn btn-outline-warning btn-favoritar" data-id="${productId}">
+                  ⭐ Adicionar aos Favoritos
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Calcula e exibe a economia em relação ao maior preço
+      if (prices.length > 1) {
+        const cheapest = Number(prices[0].price || prices[0].preco || 0);
+        const highest = Number(prices[prices.length - 1].price || prices[prices.length - 1].preco || 0);
+        const savings = highest - cheapest;
+
+        if (savings > 0) {
+          document.getElementById('savings-amount').textContent = savings.toFixed(2);
+          document.getElementById('savings-alert').classList.remove('d-none');
+        }
+      }
+
+      // Evento para favoritar
+      document.querySelectorAll('.btn-favoritar').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          const pId = e.target.dataset.id;
+          try {
+            const res = await fetch(`/api/favoritar/${pId}`, { method: 'POST' });
+            if (res.ok) {
+              alert('Produto adicionado aos favoritos!');
+            } else if (res.status === 401) {
+              alert('Você precisa fazer login para favoritar um produto.');
+              window.location.href = `/login?next=${encodeURIComponent(window.location.pathname)}`;
+            } else {
+              alert('Não foi possível adicionar aos favoritos.');
+            }
+          } catch (err) {
+            console.error('Erro ao favoritar:', err);
+          }
+        });
+      });
+
+    } catch (error) {
+      console.error('Erro ao carregar dados de comparação:', error);
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,83 +1,140 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketCompare</title>
 
-{% block content %}
-<div class="row justify-content-center">
-  <div class="col-lg-8">
-    <div class="text-center py-5">
-      <h1 class="display-5 fw-bold text-primary">Compare preços e economize</h1>
-      <p class="lead text-muted">Busque produtos e veja os melhores preços entre os principais supermercados.</p>
-      <form class="input-group input-group-lg shadow-sm mt-4" method="get" action="{{ url_for('main.index') }}">
-        <input type="text" class="form-control" name="q" placeholder="Pesquisar por produto, marca ou categoria" value="{{ query }}" />
-        <button class="btn btn-success" type="submit">Buscar</button>
-      </form>
+    <!-- Bootstrap CSS & Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <style>
+      .floating-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+      }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="/">
+      <span class="brand-badge">🛒</span>
+      <span class="brand-text">MarketCompare</span>
+    </a>
+    <ul class="sidebar-nav" id="home-sidebar-nav">
+      <li><a class="nav-link" href="/">Início</a></li>
+      <li><a class="nav-link" href="/login">Entrar</a></li>
+      <li><a class="nav-link" href="/cadastro">Criar conta</a></li>
+    </ul>
+    <div class="sidebar-config">
+      <div class="sidebar-config__label">Configuração</div>
+      <div class="theme-switch" role="group" aria-label="Configurações do site">
+        <button class="theme-switch__option is-active" type="button" data-theme="light">Claro</button>
+        <button class="theme-switch__option" type="button" data-theme="dark">Escuro</button>
+      </div>
     </div>
+  </aside>
 
-    <form method="get" class="row g-3 bg-white p-3 rounded shadow-sm mb-4">
-      <div class="col-md-4">
-        <label class="form-label">Categoria</label>
-        <select class="form-select" name="category">
-          <option value="">Todas</option>
-          {% for item in categories %}
-            <option value="{{ item }}" {% if item == category %}selected{% endif %}>{{ item }}</option>
-          {% endfor %}
-        </select>
+  <div class="content-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle" type="button" aria-label="Abrir menu">☰</button>
+        <span class="topbar-brand">MarketCompare</span>
       </div>
-      <div class="col-md-4">
-        <label class="form-label">Mercado</label>
-        <select class="form-select" name="market">
-          <option value="">Todos</option>
-          {% for item in markets %}
-            <option value="{{ item }}" {% if item == market %}selected{% endif %}>{{ item }}</option>
-          {% endfor %}
-        </select>
+      <div id="home-header-actions" class="topbar-actions">
+        <a href="/login" class="btn btn-outline-primary">Entrar</a>
       </div>
-      <div class="col-md-4">
-        <label class="form-label">Ordenação</label>
-        <select class="form-select" name="sort">
-          <option value="menor-preco" {% if sort == 'menor-preco' %}selected{% endif %}>Menor preço</option>
-          <option value="nome" {% if sort == 'nome' %}selected{% endif %}>Nome</option>
-        </select>
-      </div>
-      <div class="col-12 text-end">
-        <button class="btn btn-outline-primary" type="submit">Aplicar filtros</button>
-        <a class="btn btn-outline-secondary ms-2" href="{{ url_for('main.index') }}">Limpar filtros</a>
-      </div>
-    </form>
+    </header>
 
-    <div id="product-list" class="row g-4">
-      {% for item in products %}
-      <div class="col-md-6 col-xl-4 product-card">
-        <div class="card h-100 shadow-sm">
-          <img src="{{ item.product.image_url or 'https://via.placeholder.com/300x180' }}" class="card-img-top" alt="{{ item.product.name }}" />
-          <div class="card-body">
-            <span class="badge text-bg-light mb-2">{{ item.product.category }}</span>
-            <h5 class="card-title">{{ item.product.name }}</h5>
-            <p class="card-text text-muted">{{ item.product.brand }}</p>
-            <p class="fw-bold text-success">Menor preço: R$ {{ item.cheapest_price | format('%.2f') }}</p>
-            <a href="{{ url_for('main.compare', product_id=item.product.id) }}" class="btn btn-primary">Comparar preços</a>
+    <main class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      
+      <!-- CABEÇALHO DE BUSCA / HERO -->
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary mb-3">Compare preços e economize</h1>
+        <p class="text-secondary lead">Busque produtos e veja os melhores preços entre os principais supermercados.</p>
+        
+        <form id="search-form" class="input-group input-group-lg mt-4 shadow-sm rounded-3 overflow-hidden product-search">
+          <input type="text" class="form-control border-0 px-4" name="q" placeholder="Pesquisar por produto, marca ou categoria" aria-label="Pesquisar">
+          <button class="btn btn-success px-4" type="submit">Buscar</button>
+        </form>
+      </div>
+
+      <!-- PAINEL DE FILTROS -->
+      <form id="filter-form" class="card card-body border-0 shadow-sm mb-4">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label small fw-bold text-muted">Categoria</label>
+            <select class="form-select bg-light" name="category" id="category-select">
+              <option value="">Todas</option>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Limpeza">Limpeza</option>
+              <option value="Higiene">Higiene</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small fw-bold text-muted">Mercado</label>
+            <select class="form-select bg-light" name="market" id="market-select">
+              <option value="">Todos</option>
+              <option value="Mercado A">Mercado A</option>
+              <option value="Mercado B">Mercado B</option>
+              <option value="Mercado C">Mercado C</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small fw-bold text-muted">Ordenação</label>
+            <select class="form-select bg-light" name="sort" id="sort-select">
+              <option value="menor-preco">Menor preço</option>
+              <option value="nome">Nome</option>
+            </select>
+          </div>
+          <div class="col-12 text-end mt-3">
+            <button class="btn btn-primary px-4" type="submit">Aplicar filtros</button>
+            <button class="btn btn-outline-secondary ms-2" type="button" id="btn-clear">Limpar filtros</button>
           </div>
         </div>
-      </div>
-      {% else %}
-      <div class="col-12">
-        <div class="alert alert-info">Nenhum produto encontrado.</div>
-      </div>
-      {% endfor %}
-    </div>
+      </form>
 
-    {% if pagination.pages > 1 %}
-    <nav id="pagination" class="mt-4" data-current-page="{{ pagination.page }}" data-total-pages="{{ pagination.pages }}">
-      <ul class="pagination justify-content-center">
-        {% for page_num in pagination.iter_pages() %}
-          {% if page_num %}
-            <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
-              <a class="page-link" href="{{ url_for('main.index', q=query, category=category, market=market, sort=sort, page=page_num) }}">{{ page_num }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
-    {% endif %}
+      <!-- ÁREA ONDE OS CARDS DE PRODUTOS SÃO INJETADOS -->
+      <div id="product-list" class="row g-4"></div>
+
+      <!-- NAVEGAÇÃO / PAGINAÇÃO -->
+      <nav id="pagination" class="mt-4"></nav>
+
+    </div>
+  </div>
+    </main>
   </div>
 </div>
-{% endblock %}
+
+<!-- BOTÃO FLUTUANTE VERDE (+ NO CANTO INFERIOR) -->
+<a href="/cadastrar-produto" class="btn btn-success floating-btn text-white" title="Adicionar Produto">
+  <i class="bi bi-plus-lg"></i>
+</a>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/catalog.js"></script>
+</body>
+</html>
