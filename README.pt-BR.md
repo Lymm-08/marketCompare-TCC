@@ -1,48 +1,67 @@
+<div align="center">
+
 # MarketCompare
 
-O MarketCompare é uma aplicação web para comparar preços de produtos em diferentes mercados. O projeto conta com backend em Node.js e Express, interface web e armazenamento em arquivos JSON para produtos e contas de usuários.
+**Compare preços. Encontre a melhor oferta. Compre com confiança.**
 
-🌐 Idioma: Português | 🇺🇸 [English](README.md)
+Uma aplicação web para consultar produtos, comparar preços entre mercados e gerenciar cadastros.
+
+[English](README.md)
+
+<br />
+
+![Demonstração do MarketCompare](media/vd_original_marketCompare.gif)
+
+<br />
+
+![Node.js](https://img.shields.io/badge/Node.js-backend-339933?logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-API-000000?logo=express&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-testes-C21325?logo=jest&logoColor=white)
+![Supertest](https://img.shields.io/badge/Supertest-testes%20HTTP-6A4C93)
+
+</div>
+
+## Conteúdo
+
+- [Visão geral](#visão-geral)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Como executar](#como-executar)
+- [Testes automatizados](#testes-automatizados)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Dados e limitações atuais](#dados-e-limitações-atuais)
+
+## Visão geral
+
+O MarketCompare reúne preços de diferentes mercados em um único catálogo. Os visitantes podem buscar e filtrar produtos, comparar os preços disponíveis e encontrar a menor oferta cadastrada. Usuários autenticados também podem gerenciar seus próprios cadastros de produtos e favoritos.
 
 ## Funcionalidades
 
-| Área | Recursos |
-| --- | --- |
-| Catálogo de produtos | Listagem, busca e filtros por nome, categoria, mercado e menor preço |
-| Comparação de preços | Consulta dos preços de um produto nos mercados disponíveis |
-| Cadastros de produtos | Criação, listagem, edição e exclusão de produtos pelo usuário autenticado |
-| Contas | Cadastro, login, logout e redefinição de senha |
-| Favoritos | Inclusão e remoção de produtos favoritos durante a sessão autenticada |
-
-Os dados de produtos e contas são armazenados em `backend/src/data/products.json` e `backend/src/data/users.json`. As rotas protegidas usam sessões do Express.
+| Funcionalidade | Descrição | Acesso |
+| --- | --- | --- |
+| Catálogo de produtos | Consultar, buscar, filtrar por categoria ou mercado e ordenar por nome ou menor preço | Público |
+| Comparação de preços | Consultar os mercados e preços cadastrados para um produto | Público |
+| Cadastro de produto | Adicionar produto, mercado, endereço, cidade e preço | Requer login |
+| Gestão de cadastros | Listar, editar e excluir os produtos enviados pelo usuário autenticado | Requer login |
+| Favoritos | Adicionar e remover produtos dos favoritos da sessão atual | Requer login |
+| Conta | Criar conta, entrar, sair e redefinir senha | Público |
 
 ## Tecnologias
 
-- Node.js e Express
-- Dependência Nunjucks e templates HTML
-- HTML, CSS e JavaScript
-- Jest e Supertest para testes automatizados do backend
+- **Backend:** Node.js, Express e `express-session`
+- **Frontend:** HTML, CSS e JavaScript
+- **Dados:** arquivos JSON
+- **Testes:** Jest e Supertest
 
-## Estrutura do projeto
+## Como executar
 
-```text
-backend/
-  server.js
-  src/
-    controllers/
-    data/
-    routes/
-    services/
-  tests/
-frontend/
-  static/
-  templates/
-media/
-```
+### Requisitos
 
-## Executar localmente
+Instale Node.js e npm antes de iniciar.
 
-Instale as dependências e inicie o servidor:
+### Instalação e execução
+
+A partir da raiz do repositório:
 
 ```bash
 cd backend
@@ -50,18 +69,39 @@ npm install
 npm start
 ```
 
-A aplicação estará disponível em [http://localhost:5000](http://localhost:5000).
+Acesse [http://localhost:5000](http://localhost:5000).
 
-## Testes
+O servidor utiliza a porta `5000`. Configure a variável de ambiente `SESSION_SECRET` para definir o segredo das sessões; se ela não estiver configurada, a aplicação usa um valor padrão de desenvolvimento.
 
-Execute a suíte automatizada do backend a partir da pasta `backend/`:
+## Testes automatizados
+
+Execute os testes do backend a partir da pasta `backend/`:
 
 ```bash
 npm test
 ```
 
-Os testes cobrem listagem, busca e filtros de produtos, comparação de preços, cadastro válido e inválido, edição, exclusão e exigência de autenticação. As leituras e gravações de arquivos são simuladas para que a suíte não altere os arquivos JSON do projeto. São utilizadas as ferramentas [Jest](https://jestjs.io/) para execução dos testes e [Supertest](https://github.com/ladjs/supertest) para testar a aplicação Express por HTTP.
+A suíte com Jest e Supertest testa a API Express, incluindo listagem, busca e filtros de produtos, comparação de preços, cadastros válidos e inválidos, edição, exclusão e autenticação. As leituras dos arquivos de produtos e usuários são simuladas, e as gravações de produtos ficam em memória. Assim, os testes não alteram os arquivos JSON.
 
-## Demonstração
+## Estrutura do projeto
 
-![Demonstração do MarketCompare](media/vd_original_marketCompare.gif)
+```text
+backend/
+  server.js
+  src/
+    controllers/   Controladores de produtos e contas
+    data/          Arquivos JSON utilizados pela aplicação
+    routes/        Rotas de páginas e da API
+    services/      Busca de produtos e funções auxiliares do catálogo
+  tests/           Testes da API com Jest e Supertest
+frontend/
+  static/          CSS, JavaScript e imagens dos produtos
+  templates/       Páginas HTML
+media/             Demonstração do projeto
+```
+
+## Dados e limitações atuais
+
+Os produtos e as contas são armazenados em `backend/src/data/products.json` e `backend/src/data/users.json`. As sessões usam o armazenamento em memória padrão do `express-session` e não persistem após reiniciar o servidor.
+
+Essa configuração é voltada ao desenvolvimento local e à demonstração, não à publicação em produção. Antes de usar contas reais ou disponibilizar a aplicação publicamente, substitua o armazenamento em JSON e o armazenamento de sessões padrão, configure `SESSION_SECRET` com segurança e armazene senhas usando um mecanismo apropriado de hash.
