@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const request = require('supertest');
 const app = require('../server');
+const originalReadFileSync = fs.readFileSync.bind(fs);
 
 const PRODUCTS_FILE = path.join(__dirname, '../src/data/products.json');
 const USERS_FILE = path.join(__dirname, '../src/data/users.json');
@@ -68,7 +69,7 @@ describe('API de produtos', () => {
       if (path.resolve(filePath) === path.resolve(USERS_FILE)) {
         return JSON.stringify({ users: [testUser] });
       }
-      return jest.requireActual('fs').readFileSync(filePath, ...args);
+      return originalReadFileSync(filePath, ...args);
     });
     writeFileSync = jest.spyOn(fs, 'writeFileSync').mockImplementation((filePath, contents) => {
       if (path.resolve(filePath) === path.resolve(PRODUCTS_FILE)) {
